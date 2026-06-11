@@ -29,7 +29,8 @@ python3 -m unittest discover hooks/pre-tool-use-destructive-command-guard/tests
 Claude Code reads `.claude/settings.json` automatically for the project. The
 settings file registers the hook for `PreToolUse` events whose matcher is
 `Bash`, invokes the hook with `python3`, and uses `${CLAUDE_PROJECT_DIR}` so it
-still works after Claude changes directories inside the project.
+still works after Claude changes directories inside the project. The script path
+is quoted so projects inside directories with spaces still work.
 No executable bit or `chmod` step is required.
 
 ## Hook Behavior
